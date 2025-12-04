@@ -40,4 +40,70 @@ def compute_similarity(pair):
             return path1.name, path2.name, f"Error: {e}"
 
 
+"""
+import torch
+import clip
+import numpy as np
+from PIL import Image
+
+
+# Load CLIP model only once (global)
+_device = "cuda" if torch.cuda.is_available() else "cpu"
+_model, _preprocess = clip.load("ViT-B/32", device=_device)
+
+
+def image_clip_similarity(img1: Image.Image, img2: Image.Image, resize=(512, 512)):
+    """
+    Compute similarity between two images using CLIP embeddings.
+    :param img1: First image
+    :param img2: Second image
+    :param resize: Optional resize to speed inference
+    :return: similarity between 0 and 1
+    """
+
+    # resize + convert
+    img1 = img1.resize(resize).convert("RGB")
+    img2 = img2.resize(resize).convert("RGB")
+
+    # preprocess for CLIP
+    t1 = _preprocess(img1).unsqueeze(0).to(_device)
+    t2 = _preprocess(img2).unsqueeze(0).to(_device)
+
+    # compute embeddings
+    with torch.no_grad():
+        e1 = _model.encode_image(t1)
+        e2 = _model.encode_image(t2)
+
+    # flatten + normalize
+    e1 = e1.cpu().numpy().reshape(-1)
+    e2 = e2.cpu().numpy().reshape(-1)
+
+    e1 /= np.linalg.norm(e1)
+    e2 /= np.linalg.norm(e2)
+
+    # cosine similarity => 1 = same image
+    similarity = float(np.dot(e1, e2))
+
+    return similarity
+
+
+def compute_similarity(pair):
+    """
+    Same structure as your version.
+    Reads image paths + computes CLIP similarity.
+    """
+
+    path1, path2 = pair[0], pair[1]
+
+    try:
+        img1 = Image.open(path1)
+        img2 = Image.open(path2)
+
+        score = image_clip_similarity(img1, img2)
+        return path1.name, path2.name, score
+
+    except Exception as e:
+        return path1.name, path2.name, f"Error: {e}"
+
+"""
 
