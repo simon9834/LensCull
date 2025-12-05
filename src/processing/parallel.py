@@ -1,6 +1,5 @@
 from multiprocessing import Pool
-from itertools import combinations
-from src.processing.similarity import compute_similarity
+from src.processing.similarity import compute_similarity, compare_hashes
 import os, random
 
 
@@ -14,18 +13,18 @@ class ParallelProcessor:
         :param paths: list of paths to the photos
         """
         self.paths = paths
+        self.workers = self.estimate_processes(self.estimate_avg_size_mb())
 
     def run(self):
         """
-        Method for parallel image similarity calculation
-        :return: returns either with an exception if something fails
-         or with the list of calculated similarities with each photo
+           Method for parallel image similarity calculation
+           :return: returns either with an exception if something fails
+           or with the list of calculated similarities with each photo
         """
-        pairs = list(combinations(self.paths, 2))
-        workers = self.estimate_processes(self.estimate_avg_size_mb())
-        with Pool(processes=workers) as pool:
-            results = list(pool.imap(compute_similarity, pairs))
-        return results
+        with Pool(processes=self.workers) as pool:
+            images = pool.map(compute_similarity, self.paths)
+        comparisons = compare_hashes(images)
+        return comparisons
 
     def estimate_processes(self, avg_mb_size):
         """
