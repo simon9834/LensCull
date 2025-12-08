@@ -1,3 +1,4 @@
+import logging
 from pathlib import Path
 from src.Exceptions.EmptyFolderException import EmptyFolderException
 from src.Exceptions.UnsupportedFileTypeException import UnsupportedFileTypeException
@@ -39,6 +40,7 @@ class ImageLoader:
                         raise Exception(f"Failed to load {file.name}. Why? Here's why: {e1}")
                 else:
                     print(f"{file.name} is not supported")
+                    logging.log(logging.WARNING, f"{file.name} is not supported")
             return image_paths
         except Exception as e:
             raise UnsupportedFileTypeException(f"Error at: {e.__class__.__name__}, Error: {e}")

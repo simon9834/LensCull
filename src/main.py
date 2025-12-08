@@ -2,12 +2,19 @@ import time
 from pathlib import Path
 from src.processing.image_loader import ImageLoader
 from src.processing.parallel import ParallelProcessor
+import logging
 
 def main():
     """
     method main to run the program
     :return: None
     """
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+        filename="app.log",
+    )
+
     try:
         folder = Path("../data").resolve()
         start = time.time()
@@ -27,7 +34,7 @@ def main():
         print(f"Parallel processing finished in {end - start:.2f}s")
 
     except Exception as e:
-        print(e)
+        logging.exception(e)
 
 if __name__ == "__main__":
     main()
