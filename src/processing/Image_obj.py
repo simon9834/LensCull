@@ -4,6 +4,3 @@ class Image:
         self.histogram = histogram
         self.p_hash = p_hash
         self.similar = []
-
-    def append(self, path):
-        self.similar.append(path)

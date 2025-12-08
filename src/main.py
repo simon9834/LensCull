@@ -34,7 +34,8 @@ def main():
         print(f"Parallel processing finished in {end - start:.2f}s")
 
     except Exception as e:
-        logging.exception(e)
+        #logging.exception(e)
+        print(e)
 
 if __name__ == "__main__":
     main()

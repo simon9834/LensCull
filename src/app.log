@@ -1,0 +1,9 @@
+2025-12-08 16:59:08,336 ERROR root: the object image is not an instance of class Image.Image
+Traceback (most recent call last):
+  File "C:\Users\simon\Documents\school\Python\LensCull\src\main.py", line 28, in main
+    results = processor.run()
+  File "C:\Users\simon\Documents\school\Python\LensCull\src\processing\parallel.py", line 26, in run
+    comparisons = compare_hashes(images)
+  File "C:\Users\simon\Documents\school\Python\LensCull\src\processing\similarity.py", line 16, in compare_hashes
+    raise NotImageException("the object image is not an instance of class Image.Image")
+src.Exceptions.NotImageException.NotImageException: the object image is not an instance of class Image.Image
