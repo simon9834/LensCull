@@ -12,6 +12,10 @@ class ParallelProcessor:
         method for initialization the paths list as local variable
         :param paths: list of paths to the photos
         """
+        if not isinstance(paths, list):
+            raise TypeError("paths must be a list")
+        if len(paths) < 2:
+            raise ValueError("paths must have at least 2 elements")
         self.paths = paths
         self.workers = self.estimate_processes(self.estimate_avg_size_mb())
 

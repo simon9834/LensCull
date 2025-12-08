@@ -23,24 +23,21 @@ class ImageLoader:
         """
         folder = Path(folder_path)
         print(self.SUPPORTED)
-        try:
-            if not folder.exists() or not folder.is_dir():
-                raise FolderNotFoundException(f"folder {folder.name} does not exist")
-            if not os.access(folder, os.R_OK):
-                raise PermissionError(f"Permission at folder {folder.name} denied")
-            files = list(folder.iterdir())
-            if not files:
-                raise EmptyFolderException(f"Folder {folder.name} is empty")
-            image_paths = []
-            for file in files:
-                if file.is_file() and file.suffix.lower() in self.SUPPORTED:
-                    try:
-                        image_paths.append(file)
-                    except Exception as e1:
-                        raise Exception(f"Failed to load {file.name}. Why? Here's why: {e1}")
-                else:
-                    print(f"{file.name} is not supported")
-                    logging.log(logging.WARNING, f"{file.name} is not supported")
-            return image_paths
-        except Exception as e:
-            raise UnsupportedFileTypeException(f"Error at: {e.__class__.__name__}, Error: {e}")
+        if not folder.exists() or not folder.is_dir():
+            raise FolderNotFoundException(f"folder {folder.name} does not exist")
+        if not os.access(folder, os.R_OK):
+            raise PermissionError(f"Permission at folder {folder.name} denied")
+        files = list(folder.iterdir())
+        if not files:
+            raise EmptyFolderException(f"Folder {folder.name} is empty")
+        image_paths = []
+        for file in files:
+            if file.is_file() and file.suffix.lower() in self.SUPPORTED:
+                try:
+                    image_paths.append(file)
+                except Exception as e1:
+                    raise Exception(f"Failed to load {file.name}. Why? Here's why: {e1}")
+            else:
+                print(f"{file.name} is not supported")
+                logging.log(logging.WARNING, f"{file.name} is not supported")
+        return image_paths
