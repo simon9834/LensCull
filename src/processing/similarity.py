@@ -7,6 +7,11 @@ from src.processing import Image_obj
 from pathlib import Path
 
 def compare_hashes(images):
+    """
+    method that logically compares the calculated histograms and p_hashes
+    :param images: a list of image_obj
+    :return: returns a list of image paths pairs and their differences
+    """
     results = []
     if not isinstance(images, list):
         raise TypeError("images object must be a list")
@@ -34,6 +39,11 @@ def compare_hashes(images):
     return results
 
 def compute_similarity(img_path):
+    """
+    a method to parallel calculate the histogram value and p_hash value
+    :param img_path: the path of the image
+    :return: returns an image_obj with all attributes
+    """
     try:
         img = Image.open(img_path)
         img = img.resize((256, 256)).convert('RGB')

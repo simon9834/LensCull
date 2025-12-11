@@ -22,8 +22,7 @@ class ParallelProcessor:
     def run(self):
         """
            Method for parallel image similarity calculation
-           :return: returns either with an exception if something fails
-           or with the list of calculated similarities with each photo
+           :return: returns with the list of calculated similarities with each photo
         """
         with Pool(processes=self.workers) as pool:
             images = pool.map(compute_similarity, self.paths)

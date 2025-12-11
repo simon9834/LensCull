@@ -6,7 +6,7 @@ import logging
 
 def main():
     """
-    method main to run the program
+    method to run the program
     :return: None
     """
     logging.basicConfig(
@@ -34,7 +34,7 @@ def main():
         print(f"Parallel processing finished in {end - start:.2f}s")
 
     except Exception as e:
-        #logging.exception(e)
+        logging.exception(e)
         print(e)
 
 if __name__ == "__main__":

@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "image_similarity"
+version = "0.1.0"
+description = "A project for comparing images using perceptual hash and histograms"
+authors = ["Šimon J. Hloska šimon.hloska@proton.me"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.27.0"
+pillow = "^10.0.0"
+ImageHash = "^4.3.1"
+
+[build-system]
+requires = ["poetry-core>=1.6.0"]
+build-backend = "poetry.core.masonry.api"

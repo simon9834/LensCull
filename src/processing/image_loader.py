@@ -1,7 +1,6 @@
 import logging
 from pathlib import Path
 from src.Exceptions.EmptyFolderException import EmptyFolderException
-from src.Exceptions.UnsupportedFileTypeException import UnsupportedFileTypeException
 from src.Exceptions.FolderNotFoundException import FolderNotFoundException
 import os
 
