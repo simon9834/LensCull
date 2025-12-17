@@ -2,6 +2,7 @@ import time
 from pathlib import Path
 from src.processing.image_loader import ImageLoader
 from src.processing.parallel import ParallelProcessor
+import src.processing.log_inicialization # noqa
 import logging
 
 def main():
@@ -9,12 +10,6 @@ def main():
     method to run the program
     :return: None
     """
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s %(levelname)s %(name)s: %(message)s",
-        filename="app.log",
-    )
-
     try:
         folder = Path("../data").resolve()
         start = time.time()

@@ -7,3 +7,5 @@ Traceback (most recent call last):
   File "C:\Users\simon\Documents\school\Python\LensCull\src\processing\similarity.py", line 16, in compare_hashes
     raise NotImageException("the object image is not an instance of class Image.Image")
 src.Exceptions.NotImageException.NotImageException: the object image is not an instance of class Image.Image
+2025-12-17 16:58:06,523 ERROR root: <class 'Exception'>
+NoneType: None
