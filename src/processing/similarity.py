@@ -12,7 +12,6 @@ def compare_hashes(images):
     :param images: a list of image_obj
     :return: returns a list of image paths pairs and their differences
     """
-    results = []
     if not isinstance(images, list):
         raise TypeError("images object must be a list")
     if len(images) < 2:
@@ -28,26 +27,26 @@ def compare_hashes(images):
             if np.linalg.norm(image1.histogram) != 0:
                 histogram_distance = np.linalg.norm(image1.histogram - image2.histogram) / np.linalg.norm(image1.histogram)
                 if histogram_distance <= 0.25:
-                    image1.similar.append(image2.path)
+                    image1.add_similar(image2.path)
                 else:
                     histogram_distance = None
             else:
                 raise ZeroDivisionError("the histogram is zero")
         else:
             phash_distance = None
-        results.append(f"{Path(image1.path).name} <-> {Path(image2.path).name}: {phash_distance} - {histogram_distance}")
-    return results
+        image1.add_comparison(f"{Path(image1.path).name} <-> {Path(image2.path).name}: {phash_distance} - {histogram_distance}")
 
-def compute_similarity(img_path):
+def compute_similarity(image_object):
     """
     a method to parallel calculate the histogram value and p_hash value
-    :param img_path: the path of the image
+    :param image_object: the object of an image
     :return: returns an image_obj with all attributes
     """
     try:
-        img = Image.open(img_path)
+        img = Image.open(image_object.path)
         img = img.resize((256, 256)).convert('RGB')
-        return Image_obj.Image(img_path, imagehash.phash(img), (np.array(img.histogram(), dtype=np.float64).flatten()))
+        image_object.p_hash(imagehash.phash(img))
+        image_object.histogram(np.array(img.histogram(), dtype=np.float64).flatten())
     except Exception as e:
-            raise Exception(img_path, f"Error: {e}")
+            raise Exception(image_object.path, f"Error: {e}")
 

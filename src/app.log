@@ -9,3 +9,137 @@ Traceback (most recent call last):
 src.Exceptions.NotImageException.NotImageException: the object image is not an instance of class Image.Image
 2025-12-17 16:58:06,523 ERROR root: <class 'Exception'>
 NoneType: None
+2025-12-17 18:50:02,652 ERROR root: Failed to set path: expected str, got WindowsPath
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 29, in run
+    images = [Image(path) for path in self.paths]
+              ~~~~~^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\Image_obj.py", line 13, in __init__
+    self.path = path
+    ^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\Image_obj.py", line 29, in path
+    raise TypeError(f"Failed to set path: expected str, got {type(value).__name__}")
+TypeError: Failed to set path: expected str, got WindowsPath
+2025-12-17 18:50:50,817 ERROR root: Failed to set path: expected str, got WindowsPath
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 29, in run
+    images = [Image(path) for path in self.paths]
+              ~~~~~^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\Image_obj.py", line 13, in __init__
+    self.path = path
+    ^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\Image_obj.py", line 29, in path
+    raise TypeError(f"Failed to set path: expected str, got {type(value).__name__}")
+TypeError: Failed to set path: expected str, got WindowsPath
+2025-12-17 18:52:21,683 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754 (1).jpg', "Error: type object 'Image' has no attribute 'open'")
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 46, in compute_similarity
+    img = Image.open(image_object.path)
+          ^^^^^^^^^^
+AttributeError: type object 'Image' has no attribute 'open'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 51, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754 (1).jpg', "Error: type object 'Image' has no attribute 'open'")
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754 (1).jpg', "Error: type object 'Image' has no attribute 'open'")
+2025-12-17 18:53:51,825 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754 (1).jpg', "Error: 'Image' object has no attribute 'set_p_hash'")
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 48, in compute_similarity
+    image_object.set_p_hash(imagehash.phash(img))
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Image' object has no attribute 'set_p_hash'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 51, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754 (1).jpg', "Error: 'Image' object has no attribute 'set_p_hash'")
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754 (1).jpg', "Error: 'Image' object has no attribute 'set_p_hash'")
+2025-12-17 18:55:44,977 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'Image' object has no attribute 'set_p_hash'")
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 48, in compute_similarity
+    image_object.set_p_hash(imagehash.phash(img))
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Image' object has no attribute 'set_p_hash'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 51, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'Image' object has no attribute 'set_p_hash'")
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'Image' object has no attribute 'set_p_hash'")

@@ -20,10 +20,11 @@ def main():
         print("\nRunning parallel similarity comparison...")
 
         processor = ParallelProcessor(image_paths)
-        results = processor.run()
+        images = processor.run()
 
-        for comparison in results:
-            print(comparison)
+        for image in images:
+            for sim in image.comparison:
+                print(sim)
 
         end = time.time()
         print(f"Parallel processing finished in {end - start:.2f}s")

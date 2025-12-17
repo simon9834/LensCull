@@ -1,5 +1,7 @@
 from multiprocessing import Pool
 from src.processing.similarity import compute_similarity, compare_hashes
+from src.processing import Image_obj
+from src.processing.quality import Quality_assessment
 import os, random
 
 
@@ -24,10 +26,14 @@ class ParallelProcessor:
            Method for parallel image similarity calculation
            :return: returns with the list of calculated similarities with each photo
         """
+        images = [Image_obj.Image(str(path)) for path in self.paths]
         with Pool(processes=self.workers) as pool:
-            images = pool.map(compute_similarity, self.paths)
-        comparisons = compare_hashes(images)
-        return comparisons
+            pool.map(compute_similarity, images)
+            futures = [pool.apply_async(Quality_assessment.calculate_quality) for _ in images]
+            for f in futures:
+                f.get()
+        compare_hashes(images)
+        return images
 
     def estimate_processes(self, avg_mb_size):
         """
