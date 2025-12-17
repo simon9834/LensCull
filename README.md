@@ -10,8 +10,9 @@ A Python tool to compute similarity between images
   - `numpy`
 
 ## How to run
-Install the required packages using pip:
+Configure local interpreter (if needed)
 
+Install the required packages using pip:
 ```bash
 pip install -r requirements.txt
 ```
