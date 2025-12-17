@@ -143,3 +143,500 @@ Traceback (most recent call last):
   File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
     raise self._value
 Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'Image' object has no attribute 'set_p_hash'")
+2025-12-17 22:51:39,934 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8768 (3).jpg', "Error: 'NoneType' object is not callable")
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 48, in compute_similarity
+    image_object.p_hash(imagehash.phash(img))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 51, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8768 (3).jpg', "Error: 'NoneType' object is not callable")
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8768 (3).jpg', "Error: 'NoneType' object is not callable")
+2025-12-17 22:52:48,484 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'NoneType' object is not callable")
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 48, in compute_similarity
+    image_object.p_hash(imagehash.phash(img))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 51, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'NoneType' object is not callable")
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'NoneType' object is not callable")
+2025-12-17 22:53:02,358 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'NoneType' object is not callable")
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 48, in compute_similarity
+    image_object.p_hash(imagehash.phash(img))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 51, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'NoneType' object is not callable")
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: 'NoneType' object is not callable")
+2025-12-17 23:17:31,074 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8768 (1).jpg', 'Error: Failed to set p_hash: expected str or int, got ImageHash')
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 53, in compute_similarity
+    image_object.p_hash = imagehash.phash(img)
+    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\Image_obj.py", line 53, in p_hash
+    raise TypeError(f"Failed to set p_hash: expected str or int, got {type(value).__name__}")
+TypeError: Failed to set p_hash: expected str or int, got ImageHash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 56, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8768 (1).jpg', 'Error: Failed to set p_hash: expected str or int, got ImageHash')
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8768 (1).jpg', 'Error: Failed to set p_hash: expected str or int, got ImageHash')
+2025-12-17 23:18:06,834 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754.jpg', 'Error: Failed to set p_hash: expected str or int, got ImageHash')
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 53, in compute_similarity
+    image_object.p_hash = imagehash.phash(img)
+    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\Image_obj.py", line 53, in p_hash
+    raise TypeError(f"Failed to set p_hash: expected str or int, got {type(value).__name__}")
+TypeError: Failed to set p_hash: expected str or int, got ImageHash
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 56, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754.jpg', 'Error: Failed to set p_hash: expected str or int, got ImageHash')
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754.jpg', 'Error: Failed to set p_hash: expected str or int, got ImageHash')
+2025-12-17 23:19:59,919 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8768 (2).jpg', "Error: int() argument must be a string, a bytes-like object or a real number, not 'ImageHash'")
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 53, in compute_similarity
+    image_object.p_hash = int(imagehash.phash(img))
+                          ~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'ImageHash'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 56, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8768 (2).jpg', "Error: int() argument must be a string, a bytes-like object or a real number, not 'ImageHash'")
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8768 (2).jpg', "Error: int() argument must be a string, a bytes-like object or a real number, not 'ImageHash'")
+2025-12-17 23:21:31,264 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751.jpg', "Error: int() argument must be a string, a bytes-like object or a real number, not 'ImageHash'")
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 53, in compute_similarity
+    image_object.p_hash = int(imagehash.phash(img))
+                          ~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'ImageHash'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 56, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751.jpg', "Error: int() argument must be a string, a bytes-like object or a real number, not 'ImageHash'")
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751.jpg', "Error: int() argument must be a string, a bytes-like object or a real number, not 'ImageHash'")
+2025-12-17 23:23:54,458 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754 (1).jpg', 'Error: Failed to set histogram: expected list or tuple, got ndarray')
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 54, in compute_similarity
+    image_object.histogram = np.array(img.histogram(), dtype=np.float64).flatten()
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\Image_obj.py", line 45, in histogram
+    raise TypeError(f"Failed to set histogram: expected list or tuple, got {type(value).__name__}")
+TypeError: Failed to set histogram: expected list or tuple, got ndarray
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 56, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754 (1).jpg', 'Error: Failed to set histogram: expected list or tuple, got ndarray')
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8754 (1).jpg', 'Error: Failed to set histogram: expected list or tuple, got ndarray')
+2025-12-17 23:24:42,198 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: name 'np_array' is not defined")
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 54, in compute_similarity
+    image_object.histogram = np.array(img.histogram(), dtype=np.float64).flatten()
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\Image_obj.py", line 44, in histogram
+    if value is not None and not isinstance(value, (np_array)):
+                                                    ^^^^^^^^
+NameError: name 'np_array' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 56, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: name 'np_array' is not defined")
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', "Error: name 'np_array' is not defined")
+2025-12-17 23:24:56,883 ERROR root: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', 'Error: Failed to set histogram: expected list or tuple, got ndarray')
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 54, in compute_similarity
+    image_object.histogram = np.array(img.histogram(), dtype=np.float64).flatten()
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\Image_obj.py", line 45, in histogram
+    raise TypeError(f"Failed to set histogram: expected list or tuple, got {type(value).__name__}")
+TypeError: Failed to set histogram: expected list or tuple, got ndarray
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 56, in compute_similarity
+    raise Exception(image_object.path, f"Error: {e}")
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', 'Error: Failed to set histogram: expected list or tuple, got ndarray')
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 31, in run
+    pool.map(compute_similarity, images)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+Exception: ('C:\\Users\\simon\\LensCull\\data\\_I0A8751 (1).jpg', 'Error: Failed to set histogram: expected list or tuple, got ndarray')
+2025-12-17 23:25:18,571 ERROR root: Quality_assessment.calculate_quality() missing 1 required positional argument: 'self'
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+TypeError: Quality_assessment.calculate_quality() missing 1 required positional argument: 'self'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 34, in run
+    f.get()
+    ~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+TypeError: Quality_assessment.calculate_quality() missing 1 required positional argument: 'self'
+2025-12-17 23:28:07,021 ERROR root: 'list' object has no attribute 'bright'
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\quality.py", line 17, in calculate_quality
+    img_obj.est_quality = max(0, min(0.4 * self.image_objects.bright + 0.4 * self.image_objects.sharp + 0.2 * self.image_objects.noise, 1))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'bright'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 36, in run
+    f.get()
+    ~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+AttributeError: 'list' object has no attribute 'bright'
+2025-12-17 23:31:16,478 ERROR root: 'list' object has no attribute 'brightness_quality'
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\quality.py", line 18, in calculate_quality
+    max(0, min(0.4 * self.image_objects.brightness_quality
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'brightness_quality'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 36, in run
+    f.get()
+    ~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+AttributeError: 'list' object has no attribute 'brightness_quality'
+2025-12-17 23:32:17,540 ERROR root: 'list' object has no attribute 'brightness_quality'
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\quality.py", line 18, in calculate_quality
+    max(0, min(0.4 * self.image_objects.brightness_quality
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'brightness_quality'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 36, in run
+    f.get()
+    ~~~~~^^
+  File "C:\Users\simon\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\pool.py", line 774, in get
+    raise self._value
+AttributeError: 'list' object has no attribute 'brightness_quality'
+2025-12-17 23:34:03,720 ERROR root: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 37, in run
+    compare_hashes(images)
+    ~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 25, in compare_hashes
+    phash_distance = abs(image1.p_hash - image2.p_hash)
+                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+2025-12-17 23:35:54,692 ERROR root: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 37, in run
+    compare_hashes(images)
+    ~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 25, in compare_hashes
+    phash_distance = abs(image1.p_hash - image2.p_hash)
+                         ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'NoneType'
+2025-12-17 23:45:44,278 ERROR root: 'numpy.int64' object has no attribute 'strip'
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 23, in main
+    images = processor.run()
+  File "C:\Users\simon\LensCull\src\processing\parallel.py", line 34, in run
+    compare_hashes(images)
+    ~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\simon\LensCull\src\processing\similarity.py", line 41, in compare_hashes
+    image1.add_comparison(f"{Path(image1.path).name.strip()} <-> {Path(image2.path).name.strip()}: {phash_distance.strip()} - {histogram_distance}".strip())
+                                                                                                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.int64' object has no attribute 'strip'

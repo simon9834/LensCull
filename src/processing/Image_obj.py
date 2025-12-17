@@ -1,3 +1,7 @@
+from imagehash import ImageHash
+from numpy import ndarray
+
+
 class Image:
     def __init__(self, path, histogram=None, p_hash=None, brightness_quality=None,sharpness=None, noise=None, est_quality=None):
         self._path = None
@@ -38,7 +42,7 @@ class Image:
 
     @histogram.setter
     def histogram(self, value):
-        if value is not None and not isinstance(value, (list, tuple)):
+        if value is not None and not isinstance(value, ndarray):
             raise TypeError(f"Failed to set histogram: expected list or tuple, got {type(value).__name__}")
         self._histogram = value
 
@@ -49,7 +53,7 @@ class Image:
 
     @p_hash.setter
     def p_hash(self, value):
-        if value is not None and not isinstance(value, (str, int)):
+        if value is not None and not isinstance(value, ImageHash):
             raise TypeError(f"Failed to set p_hash: expected str or int, got {type(value).__name__}")
         self._p_hash = value
 

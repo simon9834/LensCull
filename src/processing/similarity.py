@@ -18,23 +18,26 @@ def compare_hashes(images):
         raise IndexError("images list must have at least 2 images")
     for image in images:
         if not isinstance(image, Image_obj.Image):
-            raise NotImageException("the object image is not an instance of class Image.Image")
+            raise NotImageException("the object image is not an instance of class Image_obj.Image")
     for pair in itertools.combinations(images, 2):
-        histogram_distance = 1
+        histogram_distance = None
         image1, image2 = pair
         phash_distance = abs(image1.p_hash - image2.p_hash)
+
         if phash_distance <= 8:
-            if np.linalg.norm(image1.histogram) != 0:
-                histogram_distance = np.linalg.norm(image1.histogram - image2.histogram) / np.linalg.norm(image1.histogram)
-                if histogram_distance <= 0.25:
-                    image1.add_similar(image2.path)
-                else:
-                    histogram_distance = None
-            else:
+            h1 = np.asarray(image1.histogram, dtype=np.float64)
+            h2 = np.asarray(image2.histogram, dtype=np.float64)
+
+            norm = np.linalg.norm(h1)
+            if norm == 0:
                 raise ZeroDivisionError("the histogram is zero")
-        else:
-            phash_distance = None
-        image1.add_comparison(f"{Path(image1.path).name} <-> {Path(image2.path).name}: {phash_distance} - {histogram_distance}")
+
+            histogram_distance = np.linalg.norm(h1 - h2) / norm
+
+            if histogram_distance <= 0.25:
+                image1.add_similar(image2)
+
+        image1.add_comparison(f"{Path(image1.path).name.strip()} <-> {Path(image2.path).name.strip()}: {phash_distance} - {histogram_distance}".strip())
 
 def compute_similarity(image_object):
     """
@@ -45,8 +48,9 @@ def compute_similarity(image_object):
     try:
         img = Image.open(image_object.path)
         img = img.resize((256, 256)).convert('RGB')
-        image_object.p_hash(imagehash.phash(img))
-        image_object.histogram(np.array(img.histogram(), dtype=np.float64).flatten())
+        image_object.p_hash = imagehash.phash(img)
+        image_object.histogram = np.array(img.histogram(), dtype=np.float64).flatten()
+        return image_object
     except Exception as e:
             raise Exception(image_object.path, f"Error: {e}")
 

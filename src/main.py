@@ -22,9 +22,9 @@ def main():
         processor = ParallelProcessor(image_paths)
         images = processor.run()
 
-        for image in images:
-            for sim in image.comparison:
-                print(sim)
+        for img in images:
+            for comp in img.comparison:
+                print(comp)
 
         end = time.time()
         print(f"Parallel processing finished in {end - start:.2f}s")
