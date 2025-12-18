@@ -640,3 +640,11 @@ Traceback (most recent call last):
     image1.add_comparison(f"{Path(image1.path).name.strip()} <-> {Path(image2.path).name.strip()}: {phash_distance.strip()} - {histogram_distance}".strip())
                                                                                                     ^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'numpy.int64' object has no attribute 'strip'
+2025-12-18 18:37:02,818 ERROR root: 'int' object is not iterable
+Traceback (most recent call last):
+  File "C:\Users\simon\LensCull\src\main.py", line 28, in main
+    for quality in img.est_quality:
+                   ^^^^^^^^^^^^^^^
+TypeError: 'int' object is not iterable
+2025-12-18 19:12:31,347 WARNING root: _MG_7707.CR3 is not supported
+2025-12-18 19:14:42,076 WARNING root: _MG_7707.CR3 is not supported

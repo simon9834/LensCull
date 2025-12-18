@@ -25,7 +25,7 @@ def main():
         for img in images:
             for comp in img.comparison:
                 print(comp)
-
+            print(f"image: {Path(img.path).name}, score: {img.est_quality}")
         end = time.time()
         print(f"Parallel processing finished in {end - start:.2f}s")
 

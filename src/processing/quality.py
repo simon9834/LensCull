@@ -7,12 +7,11 @@ def calculate_quality(img_obj):
     img_small = cv2.resize(img, (512, 512), interpolation=cv2.INTER_AREA)
 
     img_obj.brightness_quality = brightness_score(img_small)
-    img_obj.sharpness = sharpness_score(img_small)
+    sharpness = sharpness_score(img_small)
     img_obj.noise = noise_score(img_small)
-    img_obj.est_quality = (
-         max(0, min(0.4 * img_obj.brightness_quality
-              + 0.4 * img_obj.sharpness
-              + 0.2 * img_obj.noise, 1)))
+    img_obj.sharpness = np.clip((sharpness - 100) / (500 - 100), 0, 1)
+    est_quality = 0.2 * img_obj.brightness_quality + 0.7 * img_obj.sharpness + 0.1 * (1 - img_obj.noise)
+    img_obj.est_quality = int(np.clip(est_quality * 170, 0, 100))
     return img_obj
 
 def brightness_score(image_opened):
