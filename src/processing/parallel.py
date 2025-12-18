@@ -23,7 +23,7 @@ class ParallelProcessor:
 
     def run(self):
         """
-           Method for parallel image similarity calculation
+           Method for parallel image similarity calculation and quality estimation
            :return: returns with the list of calculated similarities with each photo
         """
         images = [Image_obj.Image(str(path)) for path in self.paths]

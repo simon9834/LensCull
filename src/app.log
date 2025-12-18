@@ -648,3 +648,8 @@ Traceback (most recent call last):
 TypeError: 'int' object is not iterable
 2025-12-18 19:12:31,347 WARNING root: _MG_7707.CR3 is not supported
 2025-12-18 19:14:42,076 WARNING root: _MG_7707.CR3 is not supported
+2025-12-18 19:44:31,173 WARNING root: _MG_7707.CR3 is not supported
+2025-12-18 19:47:07,204 WARNING root: _MG_7707.CR3 is not supported
+2025-12-18 19:52:02,508 WARNING root: _MG_7707.CR3 is not supported
+2025-12-18 19:59:21,027 WARNING root: _MG_7707.CR3 is not supported
+2025-12-18 20:00:54,903 WARNING root: _MG_7707.CR3 is not supported

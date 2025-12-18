@@ -10,8 +10,10 @@ def compare_hashes(images):
     """
     method that logically compares the calculated histograms and p_hashes
     :param images: a list of image_obj
-    :return: returns a list of image paths pairs and their differences
+    :return: may return an Error
     """
+    print("compare_hashes CALLED")
+
     if not isinstance(images, list):
         raise TypeError("images object must be a list")
     if len(images) < 2:
@@ -37,13 +39,15 @@ def compare_hashes(images):
             if histogram_distance <= 0.25:
                 image1.add_similar(image2)
 
-        image1.add_comparison(f"{Path(image1.path).name.strip()} <-> {Path(image2.path).name.strip()}: {phash_distance} - {histogram_distance}".strip())
+        owner, other = sorted([image1, image2], key=lambda x: x.path)
+        owner.add_comparison(f"{Path(owner.path).name} <-> {Path(other.path).name}: {phash_distance} - {histogram_distance}")
+
 
 def compute_similarity(image_object):
     """
-    a method to parallel calculate the histogram value and p_hash value
+    a method to parallely calculate the histogram value and p_hash value
     :param image_object: the object of an image
-    :return: returns an image_obj with all attributes
+    :return: returns an image_obj with attributes inside it
     """
     try:
         img = Image.open(image_object.path)
